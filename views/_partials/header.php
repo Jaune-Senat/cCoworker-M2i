@@ -18,7 +18,7 @@
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>
                 <div class="utilisateur">
-                    <a><?php $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
+                    <a><?= $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
                     <a href="index.php?action=logout"><i class="icon-signout"></i></a>
                 </div>
             <?php } ?>

@@ -80,7 +80,7 @@ header .utilisateur a i{
 header .utilisateur{
     display: flex;
     justify-content: end;
-    width: 150px !important;
+    width: 150px;
     color: white;
 }
 
