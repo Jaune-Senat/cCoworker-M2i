@@ -73,6 +73,17 @@ header a {
     text-decoration: none;
 }
 
+header .utilisateur a i{
+    padding-left: 10px;
+}
+
+header .utilisateur{
+    display: flex;
+    justify-content: end;
+    width: 150px !important;
+    color: white;
+}
+
 /* 
 =====================================================
 ===================== Connexion =====================

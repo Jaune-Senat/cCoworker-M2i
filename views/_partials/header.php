@@ -11,14 +11,15 @@
         <header>
         <nav>
             <img src="public/img/logo-CCoworker.png">
-            <?php if (isset($_SESSION["Utilisateur"])) {?>
+            <?php if (isset($_SESSION["utilisateur"])) {?>
                 <ul>
                     <a href="#"><li>Planning</li></a>
                     <a href="#"><li>Espaces</li></a>
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>
-                <div>
-                    <a><?php $_SESSION["Utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
+                <div class="utilisateur">
+                    <a><?php $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
+                    <a href="index.php?action=logout"><i class="icon-signout"></i></a>
                 </div>
             <?php } ?>
         </nav>
