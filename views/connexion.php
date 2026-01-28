@@ -3,7 +3,7 @@
 <form action="" method="post">
     <p>
         <label>Email :</label>
-        <input type="text" name="email" maxlength="255" cols="100%" placeholder="Entre ton email">
+        <input type="email" name="email" maxlength="255" cols="100%" placeholder="Entre ton email">
     </p>
     <p>
         <label>Mot de passe :</label>
