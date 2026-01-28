@@ -11,7 +11,7 @@
             </div>
             <div>
                 <label>Mot de passe :</label>
-                <input type="text" class="textForm" name="mdp" maxlength="255" cols="100%" placeholder="Entrer votre mot de passe...">
+                <input type="password" class="textForm" name="mdp" maxlength="255" cols="100%" placeholder="Entrer votre mot de passe...">
             </div>
             <div>
                 <input type="submit" class="submitForm" name="submit" value="Se connecter">

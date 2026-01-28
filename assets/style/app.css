@@ -69,7 +69,7 @@ header nav ul {
 }
 
 header a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -88,7 +88,23 @@ header a {
 }
 
 .pageConnexion .containerConnexion {
-    background: #C3DDFE;
+    /* background: #C3DDFE; */
+    background: 
+        linear-gradient(221deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(254, 255, 255, 0.4) 5%, 
+        rgba(254, 255, 255, 0.13) 11%, 
+        rgba(254, 255, 255, 0.4) 46%, 
+        rgba(254, 255, 255, .13) 48%, 
+        rgba(254, 255, 255, 0.13) 63%, 
+        rgba(254, 255, 255, 0.5) 65%, 
+        rgba(253, 253, 253, 0.5) 78%, 
+        rgba(255, 255, 255, 0.3) 80%, 
+        rgba(255, 255, 255, 0.13) 83%, 
+        rgba(255, 255, 255, 0.13) 71%, 
+        rgba(255, 255, 255, 0.8) 100%),
+        #C3DDFE;
+    border: solid 2px rgba(255, 255, 255, 0.1);
     width: 350px;
     height: 350px;
     display: flex;
@@ -138,6 +154,6 @@ header a {
 }
 
 .pageConnexion .containerConnexion .submitForm:hover{
-    transform: scale(1.1);
+    background-color: #2f74c9;
     transition: 0.2s;
 }
