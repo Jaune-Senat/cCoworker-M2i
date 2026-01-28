@@ -1,0 +1,10 @@
+{
+    "name": "ccoworker/ccoworker",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "CCoworker\\CCoworker\\": "src/"
+        }
+    },
+    "require": {}
+}
