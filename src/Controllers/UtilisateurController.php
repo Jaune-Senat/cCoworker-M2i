@@ -53,7 +53,7 @@ class UtilisateurController extends Controller {
                 // Si l'utilisateur existe
                 if ($donneesUtilisateur) {
                     // Vérifie que le mot de passe entré via le formulaire correspond à l'utilisateur demandé
-                    if ($_PPST["mdp"] = $donneesUtilisateur["mdp_utilisateur"]) {
+                    if ($_POST["mdp"] = $donneesUtilisateur["mdp_utilisateur"]) {
                     // TODO Hash MDP : if (password_verify($_POST["mdp"], $mdpHash["mdp_utilisateur"])) {
 
                         // Enregistre les données de l'utilisateur en session
