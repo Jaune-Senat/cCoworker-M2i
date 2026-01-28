@@ -74,6 +74,6 @@ class UtilisateurController extends Controller {
         $this->_donnees["erreurs"] = $erreurs;
         
         // Affiche la vue Connexion
-        $this->_display("Connexion");
+        $this->_display("utilisateur/Connexion");
     }
 }

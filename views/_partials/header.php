@@ -8,20 +8,18 @@
     <title>Titre de la page</title>
 </head>
 <body id="wrapper">
-    <header>
+        <header>
         <nav>
             <img src="public/img/logo-CCoworker.png">
-            
+            <?php if (isset($_SESSION["Utilisateur"])) {?>
                 <ul>
                     <a href="#"><li>Planning</li></a>
                     <a href="#"><li>Espaces</li></a>
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>
-                
-
-                <a href="#">
-                    <p>Se connecter</p>
-                </a>
-            
+                <div>
+                    <a><?php $_SESSION["Utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
+                </div>
+            <?php } ?>
         </nav>
     </header>
