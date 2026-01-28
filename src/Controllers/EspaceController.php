@@ -10,7 +10,7 @@ class EspaceController extends Controller {
         // Si l'utilisateur n'est pas connecté
         if (!isset($_SESSION["utilisateur"])) {
 
-            // Redirige l'utilisateur vers la liste des espaces
+            // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
         }
 
