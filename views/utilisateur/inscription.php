@@ -1,25 +1,35 @@
 <form action="" method="post">
-    <p>
+    <div>
         <label for="">Nom :</label>
         <input type="text" name="nom" placeholder="Indiquez le nom">
-    </p>
-    <p>
+    </div>
+    <div>
         <label for="">Prénom :</label>
         <input type="text" name="prenom" placeholder="Indiquez le prénom">
-    </p>
-    <p>
+    </div>
+    <div>
         <label for="">Mot de passe :</label>
         <input type="text" name="password" placeholder="Indiquez le mot de passe">
-    </p>
-    <p>
+    </div>
+    <div>
         <label for="">Email :</label>
         <input type="text" name="email" placeholder="Indiquez l'email">
-    </p>
-    <p>
+    </div>
+    <div>
         <label for="">Répéter mot de passe :</label>
         <input type="text" name="password_repeat" placeholder="Répétez le mot de passe">
-    </p>
-    <p>
+    </div>
+
+    <div>
+        <label for="">Role</label>
+        <Select>
+            <?php foreach($roles as $role){
+                ?>
+            <option value="<?=  $role["nom_role"] ?>"><?=  $role["nom_role"] ?> </option>
+            <?php } ?>
+        </Select>
+    </div>
+    <div>
         <input type="submit" name="submit" value="Ajouter l'employé">
-    </p>
+    </div>
 </form>
