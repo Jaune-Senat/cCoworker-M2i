@@ -12,8 +12,8 @@ class UtilisateurController extends Controller {
         // Si l'utilisateur est déja connecté
         if (isset($_SESSION["utilisateur"])) {
 
-            // Redirige l'utilisateur vers la page d'accueil
-            header("Location:index.php?controller=espace");
+            // Redirige l'utilisateur vers la liste des espaces
+            header("Location:index.php?controller=espace&action=list");
         }
 
         // Crée un tableau pour gérer les erreurs
