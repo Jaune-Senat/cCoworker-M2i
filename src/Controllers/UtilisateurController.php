@@ -150,8 +150,6 @@ class UtilisateurController extends Controller {
         $this->_donnees["erreurs"] = $erreurs;
         $this->_donnees["roles"] = $donneeRoles;
 
-        var_dump($erreurs);
-
         // Affiche la vue inscription
         $this->_display("utilisateur/inscription");
 
