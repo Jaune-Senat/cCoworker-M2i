@@ -2,8 +2,8 @@
 
 <form action="" method="post">
     <p>
-        <label>Identifiant :</label>
-        <input type="text" name="identifiant" maxlength="255" cols="100%" placeholder="Entre ton identifiant">
+        <label>Email :</label>
+        <input type="text" name="email" maxlength="255" cols="100%" placeholder="Entre ton email">
     </p>
     <p>
         <label>Mot de passe :</label>
