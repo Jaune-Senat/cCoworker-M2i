@@ -51,17 +51,17 @@ class UtilisateurController extends Controller {
                 // Récupère les informations de l'utilisateur et le hash de son mot de passe via son email
                 $donneesUtilisateur = $utilisateurModel->findByMail($email);
                 $mdpHash = $donneesUtilisateur["mdp_utilisateur"];
-
+                
                 // Si l'utilisateur existe
                 if ($donneesUtilisateur) {
                     // Vérifie que le mot de passe entré via le formulaire correspond à l'utilisateur demandé
-                    if (password_verify($_POST["mdp"], $mdpHash["mdp_utilisateur"])) {
+                    if (password_verify($_POST["mdp"], $mdpHash)) {
 
                         // Enregistre les données de l'utilisateur en session
                         $_SESSION["utilisateur"] = $donneesUtilisateur;
 
-                        // Redirige l'utilisateur vers la page d'accueil
-                        header("Location:index.php");
+                        // Redirige l'utilisateur vers la liste des espaces
+                        //header("Location:index.php?controller=espace&action=list");
                     }
                 }
 
