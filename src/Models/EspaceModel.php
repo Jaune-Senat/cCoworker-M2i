@@ -65,9 +65,10 @@ class EspaceModel extends Model {
         $prepare = $this->_db->prepare($requete);
 
         // Définition des paramètres
-        $prepare->bindValue(":num_espace", $objEspace->getNum(), PDO::PARAM_INT);
-        $prepare->bindValue(":capacite_espace", $objEspace->getCapacite(), PDO::PARAM_INT);
-        $prepare->bindValue(":id_type", $objEspace->getType(), PDO::PARAM_INT);
+        $prepare->bindValue(":num", $objEspace->getNum(), PDO::PARAM_INT);
+        $prepare->bindValue(":capacite", $objEspace->getCapacite(), PDO::PARAM_INT);
+        $prepare->bindValue(":type", $objEspace->getType(), PDO::PARAM_INT);
+        $prepare->bindValue(":id", $objEspace->getType(), PDO::PARAM_INT);
         
         return $prepare->execute();
         
