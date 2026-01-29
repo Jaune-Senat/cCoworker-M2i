@@ -50,13 +50,12 @@ class UtilisateurController extends Controller {
 
                 // Récupère les informations de l'utilisateur et le hash de son mot de passe via son email
                 $donneesUtilisateur = $utilisateurModel->findByMail($email);
-                // TODO Hash MDP : $mdpHash = $donneesUtilisateur["mdp_utilisateur"];
+                $mdpHash = $donneesUtilisateur["mdp_utilisateur"];
 
                 // Si l'utilisateur existe
                 if ($donneesUtilisateur) {
                     // Vérifie que le mot de passe entré via le formulaire correspond à l'utilisateur demandé
-                    if ($_POST["mdp"] = $donneesUtilisateur["mdp_utilisateur"]) {
-                    // TODO Hash MDP : if (password_verify($_POST["mdp"], $mdpHash["mdp_utilisateur"])) {
+                    if (password_verify($_POST["mdp"], $mdpHash["mdp_utilisateur"])) {
 
                         // Enregistre les données de l'utilisateur en session
                         $_SESSION["utilisateur"] = $donneesUtilisateur;

@@ -22,10 +22,10 @@
 
     <div>
         <label for="">Role</label>
-        <Select>
+        <Select name="role">
             <?php foreach($roles as $role){
                 ?>
-            <option value="<?=  $role["nom_role"] ?>"><?=  $role["nom_role"] ?> </option>
+            <option value="<?=  $role["id_role"] ?>"><?=  $role["nom_role"] ?> </option>
             <?php } ?>
         </Select>
     </div>

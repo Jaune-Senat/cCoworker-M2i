@@ -8,7 +8,7 @@
     <title>Titre de la page</title>
 </head>
 <body id="wrapper">
-        <header>
+    <header>
         <nav>
             <img src="public/img/logo-CCoworker.png">
             <?php if (isset($_SESSION["utilisateur"])) {?>
@@ -24,3 +24,4 @@
             <?php } ?>
         </nav>
     </header>
+    <main>
