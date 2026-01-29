@@ -9,6 +9,7 @@ class Utilisateur extends Entity {
     private string $prenom;
     private string $email;
     private string $mdp;
+    private string $mdpHash;
     private int $role;
 
     function __construct() 
@@ -37,6 +38,16 @@ class Utilisateur extends Entity {
         return $this->mdp;
     }
 
+    public function getHashedMdp(){
+
+        if($this->mdp){
+
+            $this->mdpHash = password_hash($this->mdp, PASSWORD_DEFAULT);
+        }
+
+        return $this->mdpHash;
+    }
+
     public function getRole() {
         return $this->role;
     }
@@ -60,6 +71,10 @@ class Utilisateur extends Entity {
 
     public function setMdp($mdp) {
         $this->mdp = $mdp;
+    }
+
+    public function setHashedMdp($mdp){
+        $this->mdpHash = $mdp;
     }
 
     public function setRole($role) {

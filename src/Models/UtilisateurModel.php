@@ -36,7 +36,7 @@ class UtilisateurModel extends Model {
         $prepare->bindValue(":nom_utilisateur", $objUtilisateur->getNom(), PDO::PARAM_STR);
         $prepare->bindValue(":prenom_utilisateur", $objUtilisateur->getPrenom(), PDO::PARAM_STR);
         $prepare->bindValue(":email_utilisateur", $objUtilisateur->getEmail(), PDO::PARAM_STR);
-        $prepare->bindValue(":mdp_utilisateur", $objUtilisateur->getMdp(), PDO::PARAM_STR);
+        $prepare->bindValue(":mdp_utilisateur", $objUtilisateur->getHashedMdp(), PDO::PARAM_STR);
         $prepare->bindValue(":id_role", $objUtilisateur->getRole(), PDO::PARAM_INT);
         
         return $prepare->execute();
