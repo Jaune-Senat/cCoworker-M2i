@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 28 jan. 2026 à 09:42
+-- Généré le : jeu. 29 jan. 2026 à 15:45
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -38,15 +38,7 @@ CREATE TABLE IF NOT EXISTS `espace` (
   PRIMARY KEY (`id_espace`),
   UNIQUE KEY `num_espace` (`num_espace`),
   KEY `id_type` (`id_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `espace`
---
-
-INSERT INTO `espace` (`id_espace`, `num_espace`, `capacite_espace`, `id_type`) VALUES
-(2, 9, 12, 1),
-(3, 3, 2, 2);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -56,16 +48,15 @@ INSERT INTO `espace` (`id_espace`, `num_espace`, `capacite_espace`, `id_type`) V
 
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
-  `id_espace` int NOT NULL AUTO_INCREMENT,
+  `id_reservation` int NOT NULL AUTO_INCREMENT,
+  `id_espace` int NOT NULL,
   `id_utilisateur` int NOT NULL,
   `debut_reservation` datetime NOT NULL,
   `fin_reservation` datetime NOT NULL,
   `nom_client` varchar(255) NOT NULL,
   `prenom_client` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_espace`,`id_utilisateur`),
-  KEY `id_utilisateurfk` (`id_utilisateur`),
-  KEY `id_espace` (`id_espace`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id_reservation`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -126,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_role` int NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
   KEY `id_rolefk` (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Contraintes pour les tables déchargées
@@ -137,13 +128,6 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 ALTER TABLE `espace`
   ADD CONSTRAINT `id_typefk` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Contraintes pour la table `reservation`
---
-ALTER TABLE `reservation`
-  ADD CONSTRAINT `id_espacefk` FOREIGN KEY (`id_espace`) REFERENCES `espace` (`id_espace`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `id_utilisateurfk` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `utilisateur`
