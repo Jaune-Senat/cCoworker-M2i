@@ -7,7 +7,7 @@ class Espace extends Entity {
     private int $id;
     private int $num;
     private int $capacite;
-    private int $idType;
+    private int $type;
 
 
     function __construct() 
@@ -28,8 +28,8 @@ class Espace extends Entity {
         return $this->capacite;
     }
 
-    public function getIdType() {
-        return $this->idType;
+    public function getType() {
+        return $this->type;
     }
 
 
@@ -46,8 +46,8 @@ class Espace extends Entity {
         $this->capacite = $capacite;
     }
 
-    public function setIdType($idType) {
-        $this->idType = $idType;
+    public function setType($type) {
+        $this->type = $type;
     }
 
 
