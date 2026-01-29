@@ -58,7 +58,7 @@ class EspaceModel extends Model {
         //Requête
         $requete = "UPDATE espace SET num_espace = :num
                                     , capacite_espace = :capacite
-                                    , type_espace = :type
+                                    , id_type = :type
                                     WHERE id_espace = :id";
 
         // Prépare la requête
@@ -68,7 +68,7 @@ class EspaceModel extends Model {
         $prepare->bindValue(":num", $objEspace->getNum(), PDO::PARAM_INT);
         $prepare->bindValue(":capacite", $objEspace->getCapacite(), PDO::PARAM_INT);
         $prepare->bindValue(":type", $objEspace->getType(), PDO::PARAM_INT);
-        $prepare->bindValue(":id", $objEspace->getType(), PDO::PARAM_INT);
+        $prepare->bindValue(":id", $objEspace->getId(), PDO::PARAM_INT);
         
         return $prepare->execute();
         
