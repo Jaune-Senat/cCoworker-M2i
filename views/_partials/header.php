@@ -13,7 +13,7 @@
             <img src="public/img/logo-CCoworker.png">
             <?php if (isset($_SESSION["utilisateur"])) {?>
                 <ul>
-                    <a href="index.php?controller=reservation"><li>Planning</li></a>
+                    <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
                     <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>

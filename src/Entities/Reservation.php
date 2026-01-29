@@ -6,10 +6,11 @@ use DateTime;
 
 class Reservation extends Entity {
 
+    private int $id;
     private int $espace;
     private int $utilisateur;
-    private DateTime $debut;
-    private DateTime $fin;
+    private string $debut;
+    private string  $fin;
     private string $nom_client;
     private string $prenom_client;
 
@@ -19,6 +20,10 @@ class Reservation extends Entity {
     }
 
     // Getters
+    public function getId() {
+        return $this->id;
+    }
+
     public function getEspace() {
         return $this->espace;
     }
@@ -39,6 +44,9 @@ class Reservation extends Entity {
     }
 
     // Setters
+    public function setId($id) {
+        $this->id = $id;
+    }
     public function setEspace($espace) {
         $this->espace = $espace;
     }
