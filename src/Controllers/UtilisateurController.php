@@ -61,7 +61,7 @@ class UtilisateurController extends Controller {
                         $_SESSION["utilisateur"] = $donneesUtilisateur;
 
                         // Redirige l'utilisateur vers la liste des espaces
-                        //header("Location:index.php?controller=espace&action=list");
+                        header("Location:index.php?controller=espace&action=list");
                     }
                 }
 
