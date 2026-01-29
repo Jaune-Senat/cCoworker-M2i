@@ -20,6 +20,22 @@ class EspaceModel extends Model {
         return $prepare->fetchAll();
     }
 
+    public function findById($id){
+
+        // Requête
+        $requete = "SELECT * FROM espace WHERE id_espace = :id";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        // Définition des paramètres
+        $prepare->bindValue(":id_espace", $id, PDO::PARAM_INT);
+
+        // Execute la requête
+        $prepare->execute();
+        return $prepare->fetch();
+    }
+
 
     public function add($objEspace){
         // Requête
