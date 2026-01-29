@@ -14,7 +14,7 @@
             <?php if (isset($_SESSION["utilisateur"])) {?>
                 <ul>
                     <a href="#"><li>Planning</li></a>
-                    <a href="#"><li>Espaces</li></a>
+                    <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>
                 <div class="utilisateur">
