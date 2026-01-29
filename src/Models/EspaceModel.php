@@ -74,15 +74,15 @@ class EspaceModel extends Model {
         
     }
 
-    public function delete($id){
+    public function delete($num){
 
         //Requête
-        $requete = "DELETE FROM espace WHERE id_espace = :id";
+        $requete = "DELETE FROM espace WHERE num_espace = :num";
 
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
 
-        $prepare->bindValue(":id", $id, PDO::PARAM_INT);
+        $prepare->bindValue(":num", $num, PDO::PARAM_INT);
 
         return $prepare->execute();
     }
