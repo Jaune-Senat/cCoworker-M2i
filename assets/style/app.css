@@ -1,37 +1,40 @@
-/* 
+/*
 =====================================================
 ======================== ALL ========================
 =====================================================
  */
-
+ 
 *{
   box-sizing: border-box;
   padding: 0;
   margin : 0;
   font-family: "Inria", sans-serif;
 }
-
+ 
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
 }
-
+ 
 #wrapper{
     min-height: 100vh;
     background: hsl(0, 0%, 100%);
 }
-
+ 
 main {
-    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-
-/* 
+ 
+/*
 =====================================================
 ====================== HEADER =======================
 =====================================================
  */
-
+ 
 header {
     height: 60px;
     width: 100vw;
@@ -42,7 +45,7 @@ header {
     align-items: center;
     background-color: #5FA6FF;
 }
-
+ 
 header nav {
     height: 100%;
     width: 100%;
@@ -53,16 +56,16 @@ header nav {
     font-size: 20px;
     max-width: 1200px;
 }
-
+ 
 header nav img {
     /* height: 30px; */
     width: 150px;
 }
-
+ 
 header nav p {
     width: 150px;
 }
-
+ 
 header nav ul {
     list-style: none;
     display: flex;
@@ -71,57 +74,57 @@ header nav ul {
     align-items: center;
     gap: 50px;
 }
-
+ 
 header a {
     color: white;
     text-decoration: none;
 }
-
+ 
 header .utilisateur a i{
     padding-left: 10px;
 }
-
+ 
 header .utilisateur{
     display: flex;
     justify-content: end;
     width: 150px;
     color: white;
 }
-
-/* 
+ 
+/*
 =====================================================
-===================== Connexion =====================
+============== Connexion / Inscription ==============
 =====================================================
  */
-
-.pageConnexion {
+ 
+.pageConnexion, .pageInscription {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
-.pageConnexion .containerConnexion {
+ 
+.pageConnexion .containerConnexion, .pageInscription .containerInscription {
     /* background: #C3DDFE; */
-    background: 
-        linear-gradient(221deg, 
-        rgba(255, 255, 255, 0.8) 0%, 
-        rgba(254, 255, 255, 0.4) 5%, 
-        rgba(254, 255, 255, 0.13) 11%, 
-        rgba(254, 255, 255, 0.4) 46%, 
-        rgba(254, 255, 255, .13) 48%, 
-        rgba(254, 255, 255, 0.13) 63%, 
-        rgba(254, 255, 255, 0.5) 65%, 
-        rgba(253, 253, 253, 0.5) 78%, 
-        rgba(255, 255, 255, 0.3) 80%, 
-        rgba(255, 255, 255, 0.13) 83%, 
-        rgba(255, 255, 255, 0.13) 71%, 
+    background:
+        linear-gradient(221deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(254, 255, 255, 0.4) 5%,
+        rgba(254, 255, 255, 0.13) 11%,
+        rgba(254, 255, 255, 0.4) 46%,
+        rgba(254, 255, 255, .13) 48%,
+        rgba(254, 255, 255, 0.13) 63%,
+        rgba(254, 255, 255, 0.5) 65%,
+        rgba(253, 253, 253, 0.5) 78%,
+        rgba(255, 255, 255, 0.3) 80%,
+        rgba(255, 255, 255, 0.13) 83%,
+        rgba(255, 255, 255, 0.13) 71%,
         rgba(255, 255, 255, 0.8) 100%),
         #C3DDFE;
     border: solid 2px rgba(255, 255, 255, 0.1);
-    width: 350px;
-    height: 350px;
+    /* width: 750px; */
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,46 +132,76 @@ header .utilisateur{
     padding: 30px;
     border-radius: 30px;
 }
-
-.pageConnexion .containerConnexion h1{
+ 
+.pageConnexion .containerConnexion, .pageInscription .containerInscription {
+    height: auto;
+}
+ 
+.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1{
     padding-bottom: 30px;
 }
-
-.pageConnexion .containerConnexion form{
+ 
+.pageConnexion .containerConnexion form, .pageInscription .containerInscription form{
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     /* gap: 40px; */
 }
-
-.pageConnexion .containerConnexion form div {
+ 
+.pageConnexion .containerConnexion form{
+    height: auto;
+}
+ 
+.pageConnexion .containerConnexion form #subContainer, .pageInscription .containerInscription form #subContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
+    flex-wrap: wrap;
+    height: 15em;
+    gap: 15px;
 }
-
-.pageConnexion .containerConnexion form input{
+ 
+.pageConnexion .containerConnexion form #subContainer {
+    height: auto;
+}
+ 
+.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div {
+    max-width: 251px;
+}
+ 
+.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
     border: none;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
-
-.pageConnexion .containerConnexion form label{
+ 
+.pageConnexion .containerConnexion form label, .pageInscription .containerInscription form label{
     padding-left: 9px;
     padding-bottom: 5px;
 }
-
-.pageConnexion .containerConnexion .submitForm {
-    background-color: #5FA6FF;
+ 
+.pageConnexion .containerConnexion .submitForm, .pageInscription .containerInscription .submitForm {
+    width: 100%;
     color: white;
     transition: 0.2s;
 }
-
-.pageConnexion .containerConnexion .submitForm:hover{
+ 
+.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input{
+    background-color: #5FA6FF;
+    color: white;
+    transition: 0.2s;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+ 
+.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover{
     background-color: #2f74c9;
     transition: 0.2s;
 }
+ 
