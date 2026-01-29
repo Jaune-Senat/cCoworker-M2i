@@ -29,7 +29,7 @@ class EspaceModel extends Model {
         $prepare = $this->_db->prepare($requete);
 
         // Définition des paramètres
-        $prepare->bindValue(":id_espace", $id, PDO::PARAM_INT);
+        $prepare->bindValue(":id", $id, PDO::PARAM_INT);
 
         // Execute la requête
         $prepare->execute();
