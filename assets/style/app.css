@@ -28,6 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
 }
  
 /*
@@ -45,6 +46,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #5FA6FF;
+    z-index: 999;
 }
  
 header nav {
@@ -98,7 +100,7 @@ header .utilisateur{
 =====================================================
  */
  
-.pageConnexion, .pageInscription {
+.pageConnexion, .pageInscription, .pageModifierEspace {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +108,7 @@ header .utilisateur{
     height: 100vh;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription {
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, .pageModifierEspace .containerModifierEspace{
     /* background: #C3DDFE; */
     background:
         linear-gradient(221deg,
@@ -134,15 +136,15 @@ header .utilisateur{
     border-radius: 30px;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription {
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .pageModifierEspace .containerModifierEspace {
     height: auto;
 }
  
-.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1{
+.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1, .pageModifierEspace .containerModifierEspace h1{
     padding-bottom: 30px;
 }
  
-.pageConnexion .containerConnexion form, .pageInscription .containerInscription form{
+.pageConnexion .containerConnexion form, .pageInscription .containerInscription form, .pageModifierEspace .containerModifierEspace form{
     height: 100%;
     width: 100%;
     display: flex;
@@ -169,11 +171,11 @@ header .utilisateur{
     height: auto;
 }
  
-.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div {
+.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div, .pageModifierEspace .containerModifierEspace div{
     max-width: 251px;
 }
  
-.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select{
+.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
@@ -193,16 +195,133 @@ header .utilisateur{
     transition: 0.2s;
 }
  
-.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input{
+.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, .pageModifierEspace .containerModifierEspace .submitForm input{
     background-color: #5FA6FF;
     color: white;
     transition: 0.2s;
     margin-bottom: 0;
     margin-top: 0.5em;
+    text-decoration: none;
 }
  
-.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover{
+.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover{
     background-color: #2f74c9;
     transition: 0.2s;
 }
- 
+
+/*
+=====================================================
+====================== Espaces ======================
+=====================================================
+ */
+
+
+.ListeEspaces {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+}
+
+.ListeEspaces .topListe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.ListeEspaces table{
+    color: white;
+    background: #5FA6FF;
+    border-radius: 25px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+.ListeEspaces .topListe a{
+    width: auto;
+    margin: 0;
+}
+
+.ListeEspaces table thead {
+    background-color:#2F74C9 ;
+}
+
+.ListeEspaces table th {
+    padding: 10px 30px;
+}
+
+.ListeEspaces table .options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ListeEspaces table tbody > tr:nth-of-type(even) {
+    background-color: #8ABEFF;
+}
+
+.ListeEspaces table tbody a, .ListeEspaces table span{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    width: 50px;
+    transition: 0.1s;
+    border-radius: 10px;
+}
+
+.ListeEspaces table tbody a:hover, .ListeEspaces table span:hover{
+    background-color: #2F74C9;
+    transition: 0.1s;
+}
+
+#supprimer_espace {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.600);
+    top: 0;
+    left: 0;
+}
+
+#supprimer_espace .containerSupprimer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #C3DDFE;
+    height: auto;
+}
+
+#supprimer_espace .containerSupprimer p{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#supprimer_espace .containerSupprimer span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#supprimer_espace .containerSupprimer .boutonRouge{
+    background: #D90000;
+}
+
+#supprimer_espace .containerSupprimer .boutonRouge:hover{
+    background: #b00000;
+}
+
+.pageModifierEspace .containerModifierEspace div {
+    min-width: 251px;
+}
