@@ -31,10 +31,10 @@ class Reservation extends Entity {
     public function getFin() {
         return $this->fin;
     }
-    public function getNomClient() {
+    public function getNom_client() {
         return $this->nom_client;
     }
-    public function getPrenomClient() {
+    public function getPrenom_client() {
         return $this->prenom_client;
     }
 
@@ -51,10 +51,10 @@ class Reservation extends Entity {
     public function setFin($fin) {
         $this->fin = $fin;
     }
-    public function setNomClient($nom_client) {
+    public function setNom_client($nom_client) {
         $this->nom_client = $nom_client;
     }
-    public function setPrenomClient($prenom_client) {
+    public function setPrenom_client($prenom_client) {
         $this->prenom_client = $prenom_client;
     }
 }
