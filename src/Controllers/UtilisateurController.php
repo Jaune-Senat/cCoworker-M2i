@@ -79,6 +79,15 @@ class UtilisateurController extends Controller {
         $this->_display("utilisateur/Connexion");
     }
 
+    public function logout() {
+
+        // Supprime l'utilisateur de la session
+        unset($_SESSION["utilisateur"]);
+
+        // Redirige l'utilisateur vers la page d'accueil
+         header("Location:index.php");
+    }
+
     public function create_account(){
 
         /*
