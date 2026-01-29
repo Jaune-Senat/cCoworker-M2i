@@ -93,6 +93,9 @@ header .utilisateur{
 ===================== Connexion =====================
 =====================================================
  */
+input{
+    margin-bottom: 1.5em;
+}
 
 .pageConnexion {
     display: flex;
@@ -121,7 +124,7 @@ header .utilisateur{
         #C3DDFE;
     border: solid 2px rgba(255, 255, 255, 0.1);
     width: 350px;
-    height: 350px;
+    /* height: 350px; */
     display: flex;
     flex-direction: column;
     justify-content: center;

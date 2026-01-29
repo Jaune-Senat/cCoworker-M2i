@@ -1,5 +1,5 @@
 <div class="pageConnexion">
-    <div class="">
+    <div class="containerConnexion">
         <h1>Ajouter un utilisateur</h1>
 
         <form action="" method="post">
