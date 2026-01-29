@@ -9,7 +9,8 @@ class EspaceModel extends Model {
     public function findAll(){
 
         // Requête
-        $requete = "SELECT * FROM espace";
+        $requete = "SELECT *,type.nom_type FROM espace
+                    INNER JOIN type ON type.id_type = espace.id_type";
 
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
@@ -55,8 +56,17 @@ class EspaceModel extends Model {
         return $prepare->execute();
         
     }
-    
-    public function delete(){
 
+    public function delete($id){
+
+        //Requête
+        $requete = "DELETE FROM espace WHERE id_espace = :id";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        $prepare->bindValue(":id", $id, PDO::PARAM_INT);
+
+        return $prepare->execute();
     }
 }
