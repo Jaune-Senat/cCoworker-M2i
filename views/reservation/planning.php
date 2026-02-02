@@ -10,3 +10,11 @@
         - <a href="index.php?controller=reservation&action=edit&id=<?=  $reservation["id_reservation"] ?>">Modifer</a>
         <span id="supprimer-reservation-<?=  $reservation["id_reservation"] ?>" class="btn-supprimer">Supprimer</span></p>
 <?php } ?>
+
+<!-- Ceci est un popup qui devra s'afficher quand on clique sur le bouton supprimer correspondant à une réservation précise -->
+<div id="supprimer_reservation" class="popup">
+    <h2>Supprimer la réservation ?</h2>
+    <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+    <div>Oui</div>
+    <div>Non</div>
+</div>

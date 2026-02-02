@@ -25,6 +25,7 @@ class ReservationController extends Controller {
 
         // Indique à la vue les variables nécesaires
         $this->_donnees["reservations"] = $donneesReservations;
+        $this->_donnees["scripts"] = ["reservations.js"];
 
         // Affiche la vue Liste Espaces
         $this->_display("reservation/planning");
@@ -201,5 +202,20 @@ class ReservationController extends Controller {
 
         // Affiche la vue Ajout réservation
         $this->_display("reservation/modifier");
+    }
+
+    // Suppression d'une réservation
+    public function delete() {
+
+        // Si l'utilisateur n'est pas connecté
+        if (!isset($_SESSION["utilisateur"])) {
+
+            // Redirige l'utilisateur vers la page de connexion
+            header("Location:index.php");
+        }
+
+        // Instancie le modèle Espace et supprime l'espace
+        $reservationModel = new ReservationModel;
+        $reservationModel->delete($_GET["id"]);
     }
 }
