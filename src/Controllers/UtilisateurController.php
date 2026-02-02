@@ -186,8 +186,17 @@ class UtilisateurController extends Controller {
         $utilisateurModel = new UtilisateurModel;
         $utilisateurs = $utilisateurModel->findAll();
 
+        // Compte le nombre de super administrateurs
+        $superAdministrateurs = 0;
+        foreach ($utilisateurs as $utilisateur) {
+            if ($utilisateur["id_role"] == 2) {
+                $superAdministrateurs++;
+            }
+        }
+
         // Indique à la vue les variables nécesaires
         $this->_donnees["utilisateurs"] = $utilisateurs;
+        $this->_donnees["superAdministrateurs"] = $superAdministrateurs;
         $this->_donnees["scripts"] = ["utilisateurs.js"];
 
         // Affiche la vue Liste Espaces

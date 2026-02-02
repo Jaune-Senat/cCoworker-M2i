@@ -23,9 +23,9 @@
                     <th><?=  $utilisateur["email_utilisateur"] ?></th>
                     <th><?=  $utilisateur["nom_role"] ?></th>
                     <th class="options">
-                        <a href="index.php?controller=utilisateur&action=edit&id=<?=  $utilisateur["id_utilisateur"] ?>"><i class="icon-edit"></i></a>
-                        <?php if (count($utilisateurs) > 1) { ?>
-                        <span id="supprimer-utilisateur-<?=  $utilisateur["id_utilisateur"] ?>" class="btn-supprimer"><i class="icon-trash"></i></span>
+                        <a href="index.php?controller=utilisateur&action=edit&id=<?= $utilisateur["id_utilisateur"] ?>"><i class="icon-edit"></i></a>
+                        <?php if (count($utilisateurs) > 1 && ($utilisateur["id_role"] == 2 ? $superAdministrateurs >= 2 : true)) { ?>
+                        <span id="supprimer-utilisateur-<?= $utilisateur["id_utilisateur"] ?>" class="btn-supprimer"><i class="icon-trash"></i></span>
                         <?php } ?>
                     </th>
                 </tr>
