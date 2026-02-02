@@ -10,7 +10,7 @@ POPUP_SUPPRIMER_RESERVATION.style.display = "none";
 
 BOUTONS_SUPPRIMER.forEach(bouton => {
     bouton.addEventListener("click", (e) => {
-        POPUP_SUPPRIMER_RESERVATION.style.display = "block";
+        POPUP_SUPPRIMER_RESERVATION.style.display = "flex";
         idReservation = bouton.id.substring(22);
     });
 });
