@@ -94,16 +94,20 @@ class UtilisateurModel extends Model {
         return $prepare->execute();
     }
 
-    public function delete($email){
+    public function delete($id){
 
         //Requête
-        $requete = "DELETE FROM utilisateur WHERE email_utilisateur = :email";
+        $requete = "UPDATE utilisateur SET nom_utilisateur = 'nom supprimé'
+                                           ,prenom_utilisateur = 'prenom supprimé'
+                                           ,email_utilisateur = 'email supprimé'
+                                           ,mdp_utilisateur = 'mdp supprimé'
+                                        WHERE id_utilisateur = :id" ;
 
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
 
         // Définition des paramètres
-        $prepare->bindValue(":email", $email, PDO::PARAM_STR);
+        $prepare->bindValue(":id", $id, PDO::PARAM_INT);
 
         return $prepare->execute();
     }
