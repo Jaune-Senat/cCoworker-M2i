@@ -34,13 +34,45 @@
                     <label for="debut">Date de début :<?php if (isset($erreurs)) { if (isset($erreurs["dateDebut"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["dateDebut"]; ?> </span> <?php } }?></label>
                     <input type="date" name="debut" value="<?= $dateDebut ?>" required>
                     <label>Heure de début :<?php if (isset($erreurs)) { if (isset($erreurs["heureDebut"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["heureDebut"]; ?> </span> <?php } }?></label>
-                    <input type="time" name="debut-heure" step="900" value="<?= $heureDebut ?>" required>
+                    <select name="debut-heure" required>
+                        <option <?= $heureDebut == "09:00:00" ? "selected" : "" ?>>09:00</option>
+                        <option <?= $heureDebut == "09:30:00" ? "selected" : "" ?>>09:30</option>
+                        <option <?= $heureDebut == "10:00:00" ? "selected" : "" ?>>10:00</option>
+                        <option <?= $heureDebut == "10:30:00" ? "selected" : "" ?>>10:30</option>
+                        <option <?= $heureDebut == "11:00:00" ? "selected" : "" ?>>11:00</option>
+                        <option <?= $heureDebut == "11:30:00" ? "selected" : "" ?>>11:30</option>
+                        <option <?= $heureDebut == "12:00:00" ? "selected" : "" ?>>12:00</option>
+                        <option <?= $heureDebut == "12:30:00" ? "selected" : "" ?>>12:30</option>
+                        <option <?= $heureDebut == "13:00:00" ? "selected" : "" ?>>13:00</option>
+                        <option <?= $heureDebut == "13:30:00" ? "selected" : "" ?>>13:30</option>
+                        <option <?= $heureDebut == "14:00:00" ? "selected" : "" ?>>14:00</option>
+                        <option <?= $heureDebut == "14:30:00" ? "selected" : "" ?>>14:30</option>
+                        <option <?= $heureDebut == "15:00:00" ? "selected" : "" ?>>15:00</option>
+                        <option <?= $heureDebut == "15:30:00" ? "selected" : "" ?>>15:30</option>
+                        <option <?= $heureDebut == "16:00:00" ? "selected" : "" ?>>16:00</option>
+                    </select>
                 </div>
                 <div>
                     <label for="fin">Date de fin :<?php if (isset($erreurs)) { if (isset($erreurs["dateFin"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["dateFin"]; ?> </span> <?php } }?></label>
                     <input type="date" name="fin" value="<?= $dateFin ?>" required>
                     <label>Heure de fin :<?php if (isset($erreurs)) { if (isset($erreurs["heureFin"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["heureFin"]; ?> </span> <?php } }?></label>
-                    <input type="time" name="fin-heure" step="900" value="<?= $heureFin ?>" required>
+                    <select name="fin-heure" required>
+                        <option <?= $heureFin == "09:00:00" ? "selected" : "" ?>>09:00</option>
+                        <option <?= $heureFin == "09:30:00" ? "selected" : "" ?>>09:30</option>
+                        <option <?= $heureFin == "10:00:00" ? "selected" : "" ?>>10:00</option>
+                        <option <?= $heureFin == "10:30:00" ? "selected" : "" ?>>10:30</option>
+                        <option <?= $heureFin == "11:00:00" ? "selected" : "" ?>>11:00</option>
+                        <option <?= $heureFin == "11:30:00" ? "selected" : "" ?>>11:30</option>
+                        <option <?= $heureFin == "12:00:00" ? "selected" : "" ?>>12:00</option>
+                        <option <?= $heureFin == "12:30:00" ? "selected" : "" ?>>12:30</option>
+                        <option <?= $heureFin == "13:00:00" ? "selected" : "" ?>>13:00</option>
+                        <option <?= $heureFin == "13:30:00" ? "selected" : "" ?>>13:30</option>
+                        <option <?= $heureFin == "14:00:00" ? "selected" : "" ?>>14:00</option>
+                        <option <?= $heureFin == "14:30:00" ? "selected" : "" ?>>14:30</option>
+                        <option <?= $heureFin == "15:00:00" ? "selected" : "" ?>>15:00</option>
+                        <option <?= $heureFin == "15:30:00" ? "selected" : "" ?>>15:30</option>
+                        <option <?= $heureFin == "16:00:00" ? "selected" : "" ?>>16:00</option>
+                    </select>
                 </div>
             </div>
             <div class="submitForm">
