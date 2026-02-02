@@ -76,6 +76,7 @@ class ReservationModel extends Model {
         $prepare->bindValue(":fin", $objReservation->getFin(), PDO::PARAM_STR);
         $prepare->bindValue(":nom_client", $objReservation->getNom_client(), PDO::PARAM_STR);
         $prepare->bindValue(":prenom_client", $objReservation->getPrenom_client(), PDO::PARAM_STR);
+        $prepare->bindValue(":reservation", $objReservation->getId(), PDO::PARAM_INT);
         
         // Execute la requête. Retourne un tableau (si résussite) ou false (si echec)
         return $prepare->execute();
