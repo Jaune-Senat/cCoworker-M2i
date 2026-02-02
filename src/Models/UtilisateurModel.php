@@ -20,10 +20,26 @@ class UtilisateurModel extends Model {
         return $prepare->fetchAll();
     }
 
+    public function findById($id){
+
+        // Requête
+        $requete = "SELECT * FROM utilisateur WHERE id_utilisateur = :id";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        // Définition des paramètres
+        $prepare->bindValue(":id", $id, PDO::PARAM_INT);
+
+        // Execute la requête
+        $prepare->execute();
+        return $prepare->fetch();
+    }
+
     // Trouve un utilisateur via son email
     public function findByMail($email) {
 
-        // Reqête
+        // Requête
         $requete = "SELECT * FROM utilisateur WHERE email_utilisateur = :email_utilisateur";
 
         // Prépare la requête
@@ -63,16 +79,17 @@ class UtilisateurModel extends Model {
                                         , prenom_utilisateur = :prenom
                                         , email_utilisateur = :email
                                         , mdp_utilisateur = :mdp
-                                        WHERE email_utilisateur = :email";
+                                        WHERE id_utilisateur = :id";
 
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
 
         // Définition des paramètres
-        $prepare->bindValue(":nom", $objUtilisateur->getNom(), PDO::PARAM_INT);
-        $prepare->bindValue(":prenom", $objUtilisateur->getPrenom(), PDO::PARAM_INT);
-        $prepare->bindValue(":email", $objUtilisateur->getEmail(), PDO::PARAM_INT);
+        $prepare->bindValue(":nom", $objUtilisateur->getNom(), PDO::PARAM_STR);
+        $prepare->bindValue(":prenom", $objUtilisateur->getPrenom(), PDO::PARAM_STR);
+        $prepare->bindValue(":email", $objUtilisateur->getEmail(), PDO::PARAM_STR);
         $prepare->bindValue(":mdp", $objUtilisateur->getMdp(), PDO::PARAM_INT);
+        $prepare->bindValue(":id", $objUtilisateur->getId(), PDO::PARAM_INT);
         
         return $prepare->execute();
     }
@@ -85,7 +102,8 @@ class UtilisateurModel extends Model {
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
 
-        $prepare->bindValue(":email", $email, PDO::PARAM_INT);
+        // Définition des paramètres
+        $prepare->bindValue(":email", $email, PDO::PARAM_STR);
 
         return $prepare->execute();
     }
