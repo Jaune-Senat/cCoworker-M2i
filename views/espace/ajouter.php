@@ -19,7 +19,7 @@
             <?php } ?>
         </Select>
     </div>
-    <div>
+    <div class="submitForm">
         <input type="submit" name="submit" value="Ajouter">
     </div>
 </form>

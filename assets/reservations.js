@@ -1,8 +1,8 @@
 // constantes
 const BOUTONS_SUPPRIMER = Array.from(document.getElementsByClassName("btn-supprimer"));
 const POPUP_SUPPRIMER_RESERVATION = document.getElementById("supprimer_reservation");
-const POPUP_SUPPRIMER_RESERVATION_OUI = POPUP_SUPPRIMER_RESERVATION.getElementsByTagName("div")[0];
-const POPUP_SUPPRIMER_RESERVATION_NON = POPUP_SUPPRIMER_RESERVATION.getElementsByTagName("div")[1];
+const POPUP_SUPPRIMER_RESERVATION_OUI = POPUP_SUPPRIMER_RESERVATION.getElementsByTagName("span")[0];
+const POPUP_SUPPRIMER_RESERVATION_NON = POPUP_SUPPRIMER_RESERVATION.getElementsByTagName("span")[1];
 
 let idReservation;
 

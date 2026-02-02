@@ -131,7 +131,7 @@ header .utilisateur{
     height: 100vh;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp{
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp, .pageAjouterReservation .containerAjouterReservation, .pageModifierReservation .containerModifierReservation{
     /* background: #C3DDFE; */
     background:
         linear-gradient(221deg,
@@ -158,15 +158,15 @@ header .utilisateur{
     border-radius: 30px;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp {
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp, .pageAjouterReservation .containerAjouterReservation, .pageModifierReservation .containerModifierReservation{
     height: auto;
 }
  
-.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1, .pageModifierEspace .containerModifierEspace h1, .ajoutEsp .containerAjoutEsp h1{
+.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1, .pageModifierEspace .containerModifierEspace h1, .ajoutEsp .containerAjoutEsp h1, .pageAjouterReservation .containerAjouterReservation h1, .pageModifierReservation .containerModifierReservation h1{
     padding-bottom: 30px;
 }
  
-.pageConnexion .containerConnexion form, .pageInscription .containerInscription form, .pageModifierEspace .containerModifierEspace form{
+.pageConnexion .containerConnexion form, .pageInscription .containerInscription form, .pageModifierEspace .containerModifierEspace form, .ajoutEsp .containerAjoutEsp form, .pageAjouterReservation .containerAjouterReservation form, .pageModifierReservation .containerModifierReservation form{
     height: 100%;
     width: 100%;
     display: flex;
@@ -180,7 +180,7 @@ header .utilisateur{
     height: auto;
 }
  
-.pageConnexion .containerConnexion form #subContainer, .pageInscription .containerInscription form #subContainer {
+.pageConnexion .containerConnexion form #subContainer, .pageInscription .containerInscription form #subContainer, .pageAjouterReservation .containerAjouterReservation #subContainer, .pageModifierReservation .containerModifierReservation #subContainer {
     display: flex;
     flex-direction: column;
     /* width: 100%; */
@@ -192,13 +192,17 @@ header .utilisateur{
 .pageConnexion .containerConnexion form #subContainer {
     height: auto;
 }
+
+.pageAjouterReservation .containerAjouterReservation #subContainer, .pageModifierReservation .containerModifierReservation #subContainer {
+    height: 20em;
+}
  
-.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div, .pageModifierEspace .containerModifierEspace div, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select{
+.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div, .pageModifierEspace .containerModifierEspace div, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select, .ajoutEsp .containerAjoutEsp form div, .pageAjouterReservation .containerAjouterReservation form #subContainer div, .pageModifierReservation .containerModifierReservation form #subContainer div{
     min-width: 350px;
     max-width: 350px;
 }
  
-.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select, .ajoutEsp .containerAjoutEsp  form input{
+.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select, .ajoutEsp .containerAjoutEsp  form input, .pageAjouterReservation .containerAjouterReservation form input, .pageAjouterReservation .containerAjouterReservation form select, .pageModifierReservation .containerModifierReservation form input{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
@@ -207,18 +211,18 @@ header .utilisateur{
     margin-top: 0.5em;
 }
  
-.pageConnexion .containerConnexion form label, .pageInscription .containerInscription form label,.ajoutEsp .containerAjoutEsp  form label{
+.pageConnexion .containerConnexion form label, .pageInscription .containerInscription form label, .ajoutEsp .containerAjoutEsp  form label, .pageAjouterReservation .containerAjouterReservation form label, .pageModifierReservation .containerModifierReservation form label{
     padding-left: 9px;
     padding-bottom: 5px;
 }
  
-.pageConnexion .containerConnexion .submitForm, .pageInscription .containerInscription .submitForm .ajoutEsp .containerAjoutEsp .submitForm {
+.pageConnexion .containerConnexion .submitForm, .pageInscription .containerInscription .submitForm, .ajoutEsp .containerAjoutEsp .submitForm, .pageAjouterReservation .containerAjouterReservation .submitForm, .pageModifierReservation .containerModifierReservation .submitForm {
     width: 100%;
     color: white;
     transition: 0.2s;
 }
  
-.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, .pageModifierEspace .containerModifierEspace .submitForm input, .ajoutEsp .containerAjoutEsp .submitForm input{
+.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, #supprimer_reservation span, .pageModifierEspace .containerModifierEspace .submitForm input, .ajoutEsp .containerAjoutEsp .submitForm input, .pageAjouterReservation .containerAjouterReservation .submitForm input, .pageModifierReservation .containerModifierReservation .submitForm input{
     background-color: #5FA6FF;
     color: white;
     transition: 0.2s;
@@ -227,7 +231,7 @@ header .utilisateur{
     text-decoration: none;
 }
  
-.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover, .ajoutEsp .containerAjoutEsp .submitForm input:hover{
+.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, #supprimer_reservation span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover, .ajoutEsp .containerAjoutEsp .submitForm input:hover, .pageAjouterReservation .containerAjouterReservation .submitForm input:hover, .pageModifierReservation .containerModifierReservation .submitForm input:hover{
     background-color: #2f74c9;
     transition: 0.2s;
 }
@@ -301,7 +305,7 @@ header .utilisateur{
     transition: 0.1s;
 }
 
-#supprimer_espace {
+#supprimer_espace, #supprimer_reservation {
     display: none;
     position: absolute;
     flex-direction: column;
@@ -314,7 +318,7 @@ header .utilisateur{
     left: 0;
 }
 
-#supprimer_espace .containerSupprimer{
+#supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,12 +327,12 @@ header .utilisateur{
     height: auto;
 }
 
-#supprimer_espace .containerSupprimer p{
+#supprimer_espace .containerSupprimer p, #supprimer_reservation .containerSupprimer p{
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-#supprimer_espace .containerSupprimer span{
+#supprimer_espace .containerSupprimer span, #supprimer_reservation .containerSupprimer span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -337,11 +341,11 @@ header .utilisateur{
     border-radius: 20px;
 }
 
-#supprimer_espace .containerSupprimer .boutonRouge{
+#supprimer_espace .containerSupprimer .boutonRouge, #supprimer_reservation .containerSupprimer .boutonRouge{
     background: #D90000;
 }
 
-#supprimer_espace .containerSupprimer .boutonRouge:hover{
+#supprimer_espace .containerSupprimer .boutonRouge:hover, #supprimer_reservation .containerSupprimer .boutonRouge:hover{
     background: #b00000;
 }
 
