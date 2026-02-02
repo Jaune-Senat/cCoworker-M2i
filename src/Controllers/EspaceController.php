@@ -17,6 +17,13 @@ class EspaceController extends Controller {
             // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
         }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
+        }
 
         // Récupère la liste des espaces
         $espaceModel = new EspaceModel;
@@ -38,6 +45,13 @@ class EspaceController extends Controller {
 
             // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
+        }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
         }
 
         // Récupère la liste des types
@@ -95,6 +109,13 @@ class EspaceController extends Controller {
 
             // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
+        }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
         }
 
         // Récupère la liste des types
@@ -159,6 +180,13 @@ class EspaceController extends Controller {
 
             // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
+        }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
         }
 
         // Instancie le modèle Espace et supprime l'espace

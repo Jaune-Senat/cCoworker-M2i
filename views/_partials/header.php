@@ -11,7 +11,8 @@
     <header>
         <nav>
             <img src="public/img/logo-CCoworker.png">
-            <?php if (isset($_SESSION["utilisateur"])) {?>
+            <?php if (isset($_SESSION["utilisateur"])) {
+                if ($_SESSION["utilisateur"]["id_role"] == 2) { ?>
                 <ul>
                     <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
                     <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
@@ -21,7 +22,8 @@
                     <a><?= $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
                     <a href="index.php?action=logout"><i class="icon-signout"></i></a>
                 </div>
-            <?php } ?>
+                <?php }
+            } ?>
         </nav>
     </header>
     <main>
