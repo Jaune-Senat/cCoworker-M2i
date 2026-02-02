@@ -6,6 +6,20 @@ use PDO;
 
 class UtilisateurModel extends Model {
     
+    public function findAll(){
+        
+        // Requête
+        $requete = "SELECT *,role.nom_role FROM utilisateur
+                    INNER JOIN role ON role.id_role = utilisateur.id_role";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        // Execute la requête. Retourne un tableau (si résussite) ou false (si echec)
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
+
     // Trouve un utilisateur via son email
     public function findByMail($email) {
 
@@ -40,6 +54,39 @@ class UtilisateurModel extends Model {
         $prepare->bindValue(":id_role", $objUtilisateur->getRole(), PDO::PARAM_INT);
         
         return $prepare->execute();
+    }
 
+    public function edit($objUtilisateur){
+
+        //Requête
+        $requete = "UPDATE utilisateur SET nom_utilisateur = :nom
+                                        , prenom_utilisateur = :prenom
+                                        , email_utilisateur = :email
+                                        , mdp_utilisateur = :mdp
+                                        WHERE email_utilisateur = :email";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        // Définition des paramètres
+        $prepare->bindValue(":nom", $objUtilisateur->getNom(), PDO::PARAM_INT);
+        $prepare->bindValue(":prenom", $objUtilisateur->getPrenom(), PDO::PARAM_INT);
+        $prepare->bindValue(":email", $objUtilisateur->getEmail(), PDO::PARAM_INT);
+        $prepare->bindValue(":mdp", $objUtilisateur->getMdp(), PDO::PARAM_INT);
+        
+        return $prepare->execute();
+    }
+
+    public function delete($email){
+
+        //Requête
+        $requete = "DELETE FROM utilisateur WHERE email_utilisateur = :email";
+
+        // Prépare la requête
+        $prepare = $this->_db->prepare($requete);
+
+        $prepare->bindValue(":email", $email, PDO::PARAM_INT);
+
+        return $prepare->execute();
     }
 }
