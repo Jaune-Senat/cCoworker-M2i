@@ -1,8 +1,8 @@
 // constantes
 const BOUTONS_SUPPRIMER = Array.from(document.getElementsByClassName("btn-supprimer"));
 const POPUP_SUPPRIMER_UTILISATEUR = document.getElementById("supprimer_utilisateur");
-const POPUP_SUPPRIMER_UTILISATEUR_OUI = POPUP_SUPPRIMER_UTILISATEUR.getElementsByTagName("div")[0];
-const POPUP_SUPPRIMER_UTILISATEUR_NON = POPUP_SUPPRIMER_UTILISATEUR.getElementsByTagName("div")[1];
+const POPUP_SUPPRIMER_UTILISATEUR_OUI = POPUP_SUPPRIMER_UTILISATEUR.getElementsByTagName("span")[0];
+const POPUP_SUPPRIMER_UTILISATEUR_NON = POPUP_SUPPRIMER_UTILISATEUR.getElementsByTagName("span")[1];
 
 let idUtilisateur;
 
@@ -10,7 +10,7 @@ POPUP_SUPPRIMER_UTILISATEUR.style.display = "none";
 
 BOUTONS_SUPPRIMER.forEach(bouton => {
     bouton.addEventListener("click", (e) => {
-        POPUP_SUPPRIMER_UTILISATEUR.style.display = "block";
+        POPUP_SUPPRIMER_UTILISATEUR.style.display = "flex";
         idUtilisateur = bouton.id.substring(22);
     });
 });

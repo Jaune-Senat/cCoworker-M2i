@@ -131,7 +131,7 @@ header .utilisateur{
     height: 100vh;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp, .pageAjouterReservation .containerAjouterReservation, .pageModifierReservation .containerModifierReservation{
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer, #supprimer_utilisateur .containerSupprimer, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp, .pageAjouterReservation .containerAjouterReservation, .pageModifierReservation .containerModifierReservation{
     /* background: #C3DDFE; */
     background:
         linear-gradient(221deg,
@@ -222,7 +222,7 @@ header .utilisateur{
     transition: 0.2s;
 }
  
-.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, #supprimer_reservation span, .pageModifierEspace .containerModifierEspace .submitForm input, .ajoutEsp .containerAjoutEsp .submitForm input, .pageAjouterReservation .containerAjouterReservation .submitForm input, .pageModifierReservation .containerModifierReservation .submitForm input{
+.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, #supprimer_reservation span, #supprimer_utilisateur span, .pageModifierEspace .containerModifierEspace .submitForm input, .ajoutEsp .containerAjoutEsp .submitForm input, .pageAjouterReservation .containerAjouterReservation .submitForm input, .pageModifierReservation .containerModifierReservation .submitForm input{
     background-color: #5FA6FF;
     color: white;
     transition: 0.2s;
@@ -231,7 +231,7 @@ header .utilisateur{
     text-decoration: none;
 }
  
-.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, #supprimer_reservation span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover, .ajoutEsp .containerAjoutEsp .submitForm input:hover, .pageAjouterReservation .containerAjouterReservation .submitForm input:hover, .pageModifierReservation .containerModifierReservation .submitForm input:hover{
+.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, #supprimer_reservation span:hover,#supprimer_utilisateur span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover, .ajoutEsp .containerAjoutEsp .submitForm input:hover, .pageAjouterReservation .containerAjouterReservation .submitForm input:hover, .pageModifierReservation .containerModifierReservation .submitForm input:hover{
     background-color: #2f74c9;
     transition: 0.2s;
 }
@@ -305,7 +305,7 @@ header .utilisateur{
     transition: 0.1s;
 }
 
-#supprimer_espace, #supprimer_reservation {
+#supprimer_espace, #supprimer_reservation, #supprimer_utilisateur {
     display: none;
     position: absolute;
     flex-direction: column;
@@ -318,7 +318,7 @@ header .utilisateur{
     left: 0;
 }
 
-#supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer{
+#supprimer_espace .containerSupprimer, #supprimer_reservation .containerSupprimer, #supprimer_utilisateur .containerSupprimer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -327,12 +327,12 @@ header .utilisateur{
     height: auto;
 }
 
-#supprimer_espace .containerSupprimer p, #supprimer_reservation .containerSupprimer p{
+#supprimer_espace .containerSupprimer p, #supprimer_reservation .containerSupprimer p, #supprimer_utilisateur .containerSupprimer p{
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-#supprimer_espace .containerSupprimer span, #supprimer_reservation .containerSupprimer span{
+#supprimer_espace .containerSupprimer span, #supprimer_reservation .containerSupprimer span, #supprimer_utilisateur .containerSupprimer span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -341,11 +341,11 @@ header .utilisateur{
     border-radius: 20px;
 }
 
-#supprimer_espace .containerSupprimer .boutonRouge, #supprimer_reservation .containerSupprimer .boutonRouge{
+#supprimer_espace .containerSupprimer .boutonRouge, #supprimer_reservation .containerSupprimer .boutonRouge, #supprimer_utilisateur .containerSupprimer .boutonRouge{
     background: #D90000;
 }
 
-#supprimer_espace .containerSupprimer .boutonRouge:hover, #supprimer_reservation .containerSupprimer .boutonRouge:hover{
+#supprimer_espace .containerSupprimer .boutonRouge:hover, #supprimer_reservation .containerSupprimer .boutonRouge:hover, #supprimer_utilisateur .containerSupprimer .boutonRouge:hover{
     background: #b00000;
 }
 

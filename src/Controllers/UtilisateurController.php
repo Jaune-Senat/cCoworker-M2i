@@ -247,7 +247,7 @@ class UtilisateurController extends Controller {
 
             if (!empty($_POST["password"])) {
                 if ($_POST["password"] != $_POST["password_repeat"]){
-                    $erreurs["password"] = "Le mot de passe doit être identique à sa confirmation";
+                    $erreurs["password_repeat"] = "Le mot de passe doit être identique à sa confirmation";
                 }
             }
 
