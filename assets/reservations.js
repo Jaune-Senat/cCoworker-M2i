@@ -16,7 +16,6 @@ BOUTONS_SUPPRIMER.forEach(bouton => {
 });
 
 POPUP_SUPPRIMER_RESERVATION_OUI.addEventListener("click", (e) => {
-    console.log(idReservation);
     fetch("index.php?controller=reservation&action=delete&id=" + idReservation);
     location.reload();
 });
