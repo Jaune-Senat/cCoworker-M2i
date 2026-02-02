@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 29 jan. 2026 à 15:45
+-- Généré le : lun. 02 fév. 2026 à 12:56
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -54,9 +54,9 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `debut_reservation` datetime NOT NULL,
   `fin_reservation` datetime NOT NULL,
   `nom_client` varchar(255) NOT NULL,
-  `prenom_client` varchar(255) NOT NULL,
+  `prenom_client` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id_reservation`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -115,9 +115,17 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `email_utilisateur` varchar(255) NOT NULL,
   `mdp_utilisateur` varchar(255) NOT NULL,
   `id_role` int NOT NULL,
+  `inactif` tinyint NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_utilisateur`),
   KEY `id_rolefk` (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `email_utilisateur`, `mdp_utilisateur`, `id_role`, `inactif`) VALUES
+(1, 'Admin', 'Super', 'admin@ccoworker.com', '$2y$10$G9WcO40fKqLq32qB8qa4suAzAGa8wbZo9hVtJDzqW7RVFZHfCpz6G', 2, 0);
 
 --
 -- Contraintes pour les tables déchargées
