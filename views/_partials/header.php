@@ -15,7 +15,7 @@
                 <ul>
                     <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
                     <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
-                    <a href="#"><li>Utilisateurs</li></a>
+                    <a href="index.php?controller=utilisateur&action=findAll"><li>Utilisateurs</li></a>
                 </ul>
                 <div class="utilisateur">
                     <a><?= $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
