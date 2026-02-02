@@ -5,7 +5,7 @@
 <?php foreach ($espaces as $espace) { ?>
     <p>
         Espace numéro : <?=  $espace["num_espace"] ?> - Capacité : <?=  $espace["capacite_espace"] ?> - Type : <?=  $espace["nom_type"] ?>
-        - <a href="index.php?controller=espace&action=edit&id=<?=  $espace["id_espace"] ?>">Modifer</a>
+        - <a href="index.php?controller=espace&action=edit&id=<?= $espace["id_espace"] ?>">Modifier</a>
         <span id="supprimer-espace-<?=  $espace["num_espace"] ?>" class="btn-supprimer">Supprimer</span></p>
 <?php } ?>
 

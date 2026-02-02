@@ -92,12 +92,10 @@ class UtilisateurController extends Controller {
 
     public function create_account(){
 
-        /*
         if(!isset($_SESSION['utilisateur'])){ // utilisateur non connecté
-                header("Location:error_403.php");
-                exit;
-            }
-        */
+            header("Location:error_403.php");
+            exit;
+        }
 
         $RoleModel = new RoleModel;
 
@@ -106,8 +104,6 @@ class UtilisateurController extends Controller {
         // Crée un tableau pour gérer les erreurs
         $erreurs = [];
 
-
-
         // Si le formulaire est soumis
         if (count($_POST) > 0) {
 
@@ -115,7 +111,6 @@ class UtilisateurController extends Controller {
             $nom = trim(filter_input(INPUT_POST, "nom", FILTER_SANITIZE_SPECIAL_CHARS));
             $prenom = trim(filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS));
             $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
-
 
             if (!$nom) {
                 $erreurs["nom"] = "Le nom est obligatoire";
@@ -163,7 +158,7 @@ class UtilisateurController extends Controller {
 
         // Affiche la vue inscription
         $this->_display("utilisateur/inscription");
-
     }
 
+    
 }
