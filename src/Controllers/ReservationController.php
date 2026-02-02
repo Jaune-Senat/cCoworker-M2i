@@ -130,6 +130,10 @@ class ReservationController extends Controller {
         // Crée un tableau pour gérer les erreurs
         $erreurs = [];
 
+        // Récupère la réservation en base de données
+        $reservationModel = new ReservationModel;
+        $donnesReservation = $reservationModel->findById($_GET["id"]);
+
         // Si le formulaire est soumis
         if (count($_POST) > 0) {
 
@@ -162,10 +166,6 @@ class ReservationController extends Controller {
             if (!$heureFin) {
                 $erreurs["heureFin"] = "L'heure de fin est obligatoire";
             }
-
-            // Récupère la réservation en base de données
-            $reservationModel = new ReservationModel;
-            $donnesReservation = $reservationModel->findById($_GET["id"]);
 
             // Si pas d'erreur
             if (count($erreurs) == 0) {
@@ -200,6 +200,6 @@ class ReservationController extends Controller {
         $this->_donnees["reservation"] = $donnesReservation;
 
         // Affiche la vue Ajout réservation
-        $this->_display("reservation/ajouter");
+        $this->_display("reservation/modifier");
     }
 }
