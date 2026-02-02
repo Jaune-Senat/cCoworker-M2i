@@ -175,6 +175,13 @@ class UtilisateurController extends Controller {
             header("Location:index.php");
         }
 
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
+        }
+
         // Récupère la liste des utilisateurs
         $utilisateurModel = new UtilisateurModel;
         $utilisateurs = $utilisateurModel->findAll();
@@ -193,6 +200,13 @@ class UtilisateurController extends Controller {
         if(!isset($_SESSION['utilisateur'])){ // utilisateur non connecté
             header("Location:error_403.php");
             exit;
+        }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
         }
 
         // Récupère les rôles
@@ -281,6 +295,13 @@ class UtilisateurController extends Controller {
 
             // Redirige l'utilisateur vers la page de connexion
             header("Location:index.php");
+        }
+        
+        // Si l'utilisateur n'a pas le rôle Super Administrateur
+        else if ($_SESSION["utilisateur"]["id_role"] != 2) {
+
+            // Redirige l'utilisateur vers le planning
+            header("Location:index.php?controller=reservation&action=planning");
         }
 
         // Instancie le modèle Espace et supprime l'espace

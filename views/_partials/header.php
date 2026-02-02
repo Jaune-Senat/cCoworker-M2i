@@ -11,12 +11,14 @@
     <header>
         <nav>
             <img src="public/img/logo-CCoworker.png">
-            <?php if (isset($_SESSION["utilisateur"])) {?>
-                <ul>
-                    <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
-                    <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
-                    <a href="index.php?controller=utilisateur&action=list"><li>Utilisateurs</li></a>
-                </ul>
+            <?php if (isset($_SESSION["utilisateur"])) {
+                if ($_SESSION["utilisateur"]["id_role"] == 2) { ?>
+                    <ul>
+                        <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
+                        <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
+                        <a href="index.php?controller=utilisateur&action=list"><li>Utilisateurs</li></a>
+                    </ul>
+                <?php } ?>
                 <div class="utilisateur">
                     <a><?= $_SESSION["utilisateur"]["prenom_utilisateur"]?><i class="icon-user"></i></a>
                     <a href="index.php?action=logout"><i class="icon-signout"></i></a>
