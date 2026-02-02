@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="submitForm">
-                <input type="submit" name="submit" value="Ajouter l'employé">
+                <input type="submit" name="submit" value="Ajouter l'utilisateur">
             </div>
         </form>
     </div>
