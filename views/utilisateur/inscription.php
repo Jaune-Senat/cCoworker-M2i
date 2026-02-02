@@ -5,16 +5,16 @@
         <form action="" method="post">
             <div id="subContainer">
                 <div>
-                    <label>Prénom :</label>
-                    <input type="text" name="prenom" placeholder="Indiquez le prénom..." required>
+                    <label>Prénom : <?php if (isset($erreurs)) { if (isset($erreurs["prenom"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["prenom"]; ?> </span> <?php } }?></label>
+                    <input type="text" name="prenom" placeholder="Indiquez le prénom...">
                 </div>
                 <div>
-                    <label>Nom :</label>
-                    <input type="text" name="nom" placeholder="Indiquez le nom..." required>
+                    <label>Nom : <?php if (isset($erreurs)) { if (isset($erreurs["nom"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["nom"]; ?> </span> <?php } }?></label>
+                    <input type="text" name="nom" placeholder="Indiquez le nom...">
                 </div>
                 <div>
-                    <label>Email :</label>
-                    <input type="email" name="email" placeholder="Indiquez l'email..." required>
+                    <label>Email : <?php if (isset($erreurs)) { if (isset($erreurs["email"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["email"]; ?> </span> <?php } }?></label>
+                    <input type="email" name="email" placeholder="Indiquez l'email...">
                 </div>
                 <div>
                     <label>Role</label>
@@ -26,8 +26,8 @@
                     </select>
                 </div>
                 <div>
-                    <label>Mot de passe :</label>
-                    <input type="password" name="password" placeholder="Indiquez le mot de passe..." required>
+                    <label>Mot de passe : <?php if (isset($erreurs)) { if (isset($erreurs["password"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["password"]; ?> </span> <?php } }?></label>
+                    <input type="password" name="password" placeholder="Indiquez le mot de passe...">
                 </div>
                 <div>
                     <label>Répéter mot de passe :</label>
@@ -39,4 +39,16 @@
             </div>
         </form>
     </div>
+
+    <?php if (isset($erreurs)) {?>
+        <?php if (isset($erreurs["insertion"])) { ?>
+        <div id="backRouge" class="containerConnexion">
+            <?php echo $erreurs["insertion"]; ?>
+        </div>
+        <?php } if (isset($erreurs["password_repeat"])) { ?>
+        <div id="backRouge" class="containerInscription">
+            <?php echo $erreurs["password_repeat"]; ?>
+        </div>
+    <?php } } ?>
+
 </div>
