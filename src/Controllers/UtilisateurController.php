@@ -147,7 +147,12 @@ class UtilisateurController extends Controller {
 
                 $boolInsert = $utilisateurModel->addUser($objUtilisateur);
 
-                if (!$boolInsert) {
+                if ($boolInsert) {
+
+                    // Redirige l'utilisateur vers la liste des utilisateurs
+                    header("Location:index.php?controller=utilisateur&action=list");
+                }
+                else {
                     $erreur["insertion"] = "Une erreur s'est produite lors de l'insertion en base de donnée";
                 } 
             }
@@ -160,5 +165,126 @@ class UtilisateurController extends Controller {
         $this->_display("utilisateur/inscription");
     }
 
-    
+    // Liste des utilisateurs
+    public function list() {
+
+        // Si l'utilisateur n'est pas connecté
+        if (!isset($_SESSION["utilisateur"])) {
+
+            // Redirige l'utilisateur vers la page de connexion
+            header("Location:index.php");
+        }
+
+        // Récupère la liste des utilisateurs
+        $utilisateurModel = new UtilisateurModel;
+        $utilisateurs = $utilisateurModel->findAll();
+
+        // Indique à la vue les variables nécesaires
+        $this->_donnees["utilisateurs"] = $utilisateurs;
+        $this->_donnees["scripts"] = ["utilisateurs.js"];
+
+        // Affiche la vue Liste Espaces
+        $this->_display(("utilisateur/liste"));
+    }
+
+    // Modifier un utilisateur
+    public function edit() {
+
+        if(!isset($_SESSION['utilisateur'])){ // utilisateur non connecté
+            header("Location:error_403.php");
+            exit;
+        }
+
+        // Récupère les rôles
+        $RoleModel = new RoleModel;
+        $donneeRoles = $RoleModel->findAll();
+
+        // Récupère les données de l'utilisateur
+        $utilisateurModel = new UtilisateurModel;
+        $donneesUtilisateur = $utilisateurModel->findById($_GET["id"]);
+
+        // Crée un tableau pour gérer les erreurs
+        $erreurs = [];
+
+        // Si le formulaire est soumis
+        if (count($_POST) > 0) {
+
+            // Filtrage des données
+            $nom = trim(filter_input(INPUT_POST, "nom", FILTER_SANITIZE_SPECIAL_CHARS));
+            $prenom = trim(filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS));
+            $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+
+            if (!$nom) {
+                $erreurs["nom"] = "Le nom est obligatoire";
+            } 
+            if (!$prenom) {
+                $erreurs["prenom"] = "Le prenom est obligatoire";
+            }
+
+            // Test si l'email est dans un format valide
+            $emailValide = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+            // Test des données entrées par l'utilisateur
+            if (!$email) {
+                $erreurs["email"] = "Ce champ est obligatoire";
+            } else if (!$emailValide) {
+                $erreurs["email"] = "Adresse mail invalide";
+            }
+
+            if (!empty($_POST["password"])) {
+                if ($_POST["password"] != $_POST["password_repeat"]){
+                    $erreurs["password"] = "Le mot de passe doit être identique à sa confirmation";
+                }
+            }
+
+            // Si pas d'erreur => insertion en bdd
+            if (count($erreurs) == 0) {
+
+                // Crée un objet utilisateur
+                $objUtilisateur = new Utilisateur;
+                $objUtilisateur->hydrate($donneesUtilisateur);
+                
+                // Modifie l'utilisateur
+                $objUtilisateur->setNom($nom);
+                $objUtilisateur->setPrenom($prenom);
+                $objUtilisateur->setEmail($email);
+                if (!empty($_POST["password"])) {
+                    $objUtilisateur->setMdp($_POST["password"]);
+                }
+                $objUtilisateur->setRole($_POST["role"]);
+
+                $boolInsert = $utilisateurModel->edit($objUtilisateur);
+
+                if ($boolInsert) {
+                    // Redirige l'utilisateur vers la liste des utilisateurs
+                    header("Location:index.php?controller=utilisateur&action=list");
+                }
+                else {
+                    $erreur["insertion"] = "Une erreur s'est produite lors de l'insertion en base de donnée";
+                }
+            }
+        }
+        // Indique à la vue les variables nécesaires
+        $this->_donnees["erreurs"] = $erreurs;
+        $this->_donnees["roles"] = $donneeRoles;
+        $this->_donnees["utilisateur"] = $donneesUtilisateur;
+
+        // Affiche la vue inscription
+        $this->_display("utilisateur/modifier");
+    }
+
+    // Suppression d'un utilisateur
+    public function delete() {
+
+        // Si l'utilisateur n'est pas connecté
+        if (!isset($_SESSION["utilisateur"])) {
+
+            // Redirige l'utilisateur vers la page de connexion
+            header("Location:index.php");
+        }
+
+        // Instancie le modèle Espace et supprime l'espace
+        $utilisateurModel = new UtilisateurModel;
+        $utilisateurModel->delete($_GET["id"]);
+    }
 }
