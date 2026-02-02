@@ -131,7 +131,7 @@ header .utilisateur{
     height: 100vh;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, .pageModifierEspace .containerModifierEspace{
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .ListeEspaces, #supprimer_espace .containerSupprimer, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp{
     /* background: #C3DDFE; */
     background:
         linear-gradient(221deg,
@@ -149,7 +149,6 @@ header .utilisateur{
         rgba(255, 255, 255, 0.8) 100%),
         #C3DDFE;
     border: solid 2px rgba(255, 255, 255, 0.1);
-    /* width: 750px; */
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -159,11 +158,11 @@ header .utilisateur{
     border-radius: 30px;
 }
  
-.pageConnexion .containerConnexion, .pageInscription .containerInscription, .pageModifierEspace .containerModifierEspace {
+.pageConnexion .containerConnexion, .pageInscription .containerInscription, .pageModifierEspace .containerModifierEspace, .ajoutEsp .containerAjoutEsp {
     height: auto;
 }
  
-.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1, .pageModifierEspace .containerModifierEspace h1{
+.pageConnexion .containerConnexion h1, .pageInscription .containerInscription h1, .pageModifierEspace .containerModifierEspace h1, .ajoutEsp .containerAjoutEsp h1{
     padding-bottom: 30px;
 }
  
@@ -199,7 +198,7 @@ header .utilisateur{
     max-width: 350px;
 }
  
-.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select{
+.pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select, .ajoutEsp .containerAjoutEsp  form input{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
@@ -208,18 +207,18 @@ header .utilisateur{
     margin-top: 0.5em;
 }
  
-.pageConnexion .containerConnexion form label, .pageInscription .containerInscription form label{
+.pageConnexion .containerConnexion form label, .pageInscription .containerInscription form label,.ajoutEsp .containerAjoutEsp  form label{
     padding-left: 9px;
     padding-bottom: 5px;
 }
  
-.pageConnexion .containerConnexion .submitForm, .pageInscription .containerInscription .submitForm {
+.pageConnexion .containerConnexion .submitForm, .pageInscription .containerInscription .submitForm .ajoutEsp .containerAjoutEsp .submitForm {
     width: 100%;
     color: white;
     transition: 0.2s;
 }
  
-.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, .pageModifierEspace .containerModifierEspace .submitForm input{
+.pageConnexion .containerConnexion .submitForm input, .pageInscription .containerInscription .submitForm input, .ListeEspaces div a, #supprimer_espace span, .pageModifierEspace .containerModifierEspace .submitForm input, .ajoutEsp .containerAjoutEsp .submitForm input{
     background-color: #5FA6FF;
     color: white;
     transition: 0.2s;
@@ -228,7 +227,7 @@ header .utilisateur{
     text-decoration: none;
 }
  
-.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover{
+.pageConnexion .containerConnexion .submitForm input:hover, .pageInscription .containerInscription .submitForm input:hover, .ListeEspaces div a:hover, #supprimer_espace span:hover, .pageModifierEspace .containerModifierEspace .submitForm input:hover, .ajoutEsp .containerAjoutEsp .submitForm input:hover{
     background-color: #2f74c9;
     transition: 0.2s;
 }
@@ -254,7 +253,7 @@ header .utilisateur{
     padding-bottom: 20px;
     width: 100%;
 }
-
+ 
 .ListeEspaces table{
     color: white;
     background: #5FA6FF;
@@ -296,7 +295,7 @@ header .utilisateur{
     transition: 0.1s;
     border-radius: 10px;
 }
-
+ 
 .ListeEspaces table tbody a:hover, .ListeEspaces table span:hover{
     background-color: #2F74C9;
     transition: 0.1s;
@@ -348,4 +347,8 @@ header .utilisateur{
 
 .pageModifierEspace .containerModifierEspace div {
     min-width: 251px;
+}
+
+.ajoutEsp .containerAjoutEsp .submitForm{
+    margin-top: 1em;
 }

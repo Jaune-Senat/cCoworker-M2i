@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/app.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <title>Titre de la page</title>
 </head>
 <body id="wrapper">
@@ -13,7 +13,7 @@
             <img src="public/img/logo-CCoworker.png">
             <?php if (isset($_SESSION["utilisateur"])) {?>
                 <ul>
-                    <a href="#"><li>Planning</li></a>
+                    <a href="index.php?controller=reservation&action=planning"><li>Planning</li></a>
                     <a href="index.php?controller=espace&action=list"><li>Espaces</li></a>
                     <a href="#"><li>Utilisateurs</li></a>
                 </ul>

@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <label>Répéter mot de passe :</label>
-                    <input type="password" name="password_repeat" placeholder="Répétez le mot de passe...">
+                    <input type="password" name="password_repeat" placeholder="Répétez le mot de passe..." required>
                 </div>
             </div>
             <div class="submitForm">

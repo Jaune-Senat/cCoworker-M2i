@@ -1,4 +1,6 @@
-<h1>Ajouter un espace</h1>
+<div class="ajoutEsp">
+  <div class="containerAjoutEsp">
+      <h1>Ajouter un espace</h1>
 
 <form action="" method="post">
     <div>
