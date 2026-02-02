@@ -2,11 +2,11 @@
 
 <form action="" method="post">
     <div>
-        <label for="numero">Numéro :</label>
+        <label for="numero">Numéro : <?php if (isset($erreurs)) { if (isset($erreurs["numero"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["numero"]; ?> </span> <?php } }?></label>
         <input type="number" name="numero" placeholder="Numéro de l'espace" required>
     </div>
     <div>
-        <label for="capacite">Capacité :</label>
+        <label for="capacite">Capacité :<?php if (isset($erreurs)) { if (isset($erreurs["capacite"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["capacite"]; ?> </span> <?php } }?></label>
         <input type="number" name="capacite" placeholder="Capacité de l'espace" required>
     </div>
     <div>

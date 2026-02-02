@@ -134,7 +134,7 @@ class UtilisateurController extends Controller {
             if (empty($_POST["password"])) {
                 $erreurs["password"] = "Le mot de passe est obligatoire";
             } else if ($_POST["password"] != $_POST["password_repeat"]){
-                $erreurs["password"] = "Le mot de passe doit être identique à sa confirmation";
+                $erreurs["password_repeat"] = "Le mot de passe doit être identique à sa confirmation";
             }
 
             // Si pas d'erreur => insertion en bdd

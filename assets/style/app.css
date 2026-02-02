@@ -30,7 +30,30 @@ main {
     min-height: 100vh;
     position: relative;
 }
+
+#backRouge {
+    background:
+        linear-gradient(221deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(254, 255, 255, 0.4) 5%,
+        rgba(254, 255, 255, 0.13) 11%,
+        rgba(254, 255, 255, 0.4) 46%,
+        rgba(254, 255, 255, .13) 48%,
+        rgba(254, 255, 255, 0.13) 63%,
+        rgba(254, 255, 255, 0.5) 65%,
+        rgba(253, 253, 253, 0.5) 78%,
+        rgba(255, 255, 255, 0.3) 80%,
+        rgba(255, 255, 255, 0.13) 83%,
+        rgba(255, 255, 255, 0.13) 71%,
+        rgba(255, 255, 255, 0.8) 100%),
+        #fec3c3;
+    margin-top: 20px;
+}
  
+.messageAlerte{
+    color: red;
+}
+
 /*
 =====================================================
 ====================== HEADER =======================
@@ -171,8 +194,9 @@ header .utilisateur{
     height: auto;
 }
  
-.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div, .pageModifierEspace .containerModifierEspace div{
-    max-width: 251px;
+.pageConnexion .containerConnexion form #subContainer div, .pageInscription .containerInscription form #subContainer div, .pageModifierEspace .containerModifierEspace div, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select{
+    min-width: 350px;
+    max-width: 350px;
 }
  
 .pageConnexion .containerConnexion form input, select, .pageInscription .containerInscription form input, select, .ListeEspaces div a, .pageModifierEspace .containerModifierEspace input, .pageModifierEspace .containerModifierEspace select{
