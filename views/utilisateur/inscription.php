@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <label>Mot de passe : <?php if (isset($erreurs)) { if (isset($erreurs["password"])) { ?> <span class="messageAlerte"> <?php echo $erreurs["password"]; ?> </span> <?php } }?></label>
-                    <input type="password" name="password" placeholder="Indiquez le mot de passe...">
+                    <input type="password" name="password" placeholder="Indiquez le mot de passe..." required>
                 </div>
                 <div>
                     <label>Répéter mot de passe :</label>

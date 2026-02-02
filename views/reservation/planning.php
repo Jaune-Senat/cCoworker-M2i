@@ -12,9 +12,11 @@
 <?php } ?>
 
 <!-- Ceci est un popup qui devra s'afficher quand on clique sur le bouton supprimer correspondant à une réservation précise -->
-<div id="supprimer_reservation" class="popup">
-    <h2>Supprimer la réservation ?</h2>
-    <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
-    <div>Oui</div>
-    <div>Non</div>
-</div>
+    <div id="supprimer_reservation" class="popup">
+        <div class="containerSupprimer">
+            <h2>Supprimer la réservation ?</h2>
+            <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+            <span class="boutonRouge">Oui</span>
+            <span>Non</span>
+        </div>
+    </div>
