@@ -4,10 +4,13 @@
 
 <?php foreach ($utilisateurs as $utilisateur) { ?>
     <p>
-        Prénom : <?=  $utilisateur["prenom_utilisateur"] ?> - Nom : <?=  $utilisateur["nom_utilisateur"] ?> - Email : <?=  $utilisateur["email_utilisateur"] ?>
+        Prénom : <?=  $utilisateur["prenom_utilisateur"] ?> - Nom : <?=  $utilisateur["nom_utilisateur"] ?> - Email : <?=  $utilisateur["email_utilisateur"] ?> - Rôle : <?=  $utilisateur["nom_role"] ?>
         - <a href="index.php?controller=utilisateur&action=edit&id=<?=  $utilisateur["id_utilisateur"] ?>">Modifier les informations</a>
-        <span id="supprimer-utilisateur-<?=  $utilisateur["id_utilisateur"] ?>" class="btn-supprimer">Supprimer l'utilisateur</span></p>
-<?php } ?>
+        <?php if (count($utilisateurs) > 1) { ?>
+            <span id="supprimer-utilisateur-<?=  $utilisateur["id_utilisateur"] ?>" class="btn-supprimer">Supprimer l'utilisateur</span>
+        <?php } ?>
+    </p>
+    <?php } ?>
 
 <!-- Ceci est un popup qui devra s'afficher quand on clique sur le bouton supprimer correspondant à un utilisateur précis -->
 <div id="supprimer_utilisateur" class="popup">

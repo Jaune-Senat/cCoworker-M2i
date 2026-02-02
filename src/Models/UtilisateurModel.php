@@ -10,7 +10,8 @@ class UtilisateurModel extends Model {
         
         // Requête
         $requete = "SELECT *,role.nom_role FROM utilisateur
-                    INNER JOIN role ON role.id_role = utilisateur.id_role";
+                    INNER JOIN role ON role.id_role = utilisateur.id_role
+                    WHERE inactif = 0";
 
         // Prépare la requête
         $prepare = $this->_db->prepare($requete);
@@ -66,7 +67,7 @@ class UtilisateurModel extends Model {
         $prepare->bindValue(":nom_utilisateur", $objUtilisateur->getNom(), PDO::PARAM_STR);
         $prepare->bindValue(":prenom_utilisateur", $objUtilisateur->getPrenom(), PDO::PARAM_STR);
         $prepare->bindValue(":email_utilisateur", $objUtilisateur->getEmail(), PDO::PARAM_STR);
-        $prepare->bindValue(":mdp_utilisateur", $objUtilisateur->getHashedMdp(), PDO::PARAM_STR);
+        $prepare->bindValue(":mdp_utilisateur", $objUtilisateur->getMdp(), PDO::PARAM_STR);
         $prepare->bindValue(":id_role", $objUtilisateur->getRole(), PDO::PARAM_INT);
         
         return $prepare->execute();
@@ -79,6 +80,7 @@ class UtilisateurModel extends Model {
                                         , prenom_utilisateur = :prenom
                                         , email_utilisateur = :email
                                         , mdp_utilisateur = :mdp
+                                        , id_role = :role
                                         WHERE id_utilisateur = :id";
 
         // Prépare la requête
@@ -88,7 +90,8 @@ class UtilisateurModel extends Model {
         $prepare->bindValue(":nom", $objUtilisateur->getNom(), PDO::PARAM_STR);
         $prepare->bindValue(":prenom", $objUtilisateur->getPrenom(), PDO::PARAM_STR);
         $prepare->bindValue(":email", $objUtilisateur->getEmail(), PDO::PARAM_STR);
-        $prepare->bindValue(":mdp", $objUtilisateur->getMdp(), PDO::PARAM_INT);
+        $prepare->bindValue(":mdp", $objUtilisateur->getMdp(), PDO::PARAM_STR);
+        $prepare->bindValue(":role", $objUtilisateur->getRole(), PDO::PARAM_INT);
         $prepare->bindValue(":id", $objUtilisateur->getId(), PDO::PARAM_INT);
         
         return $prepare->execute();
@@ -101,6 +104,7 @@ class UtilisateurModel extends Model {
                                            ,prenom_utilisateur = 'prenom supprimé'
                                            ,email_utilisateur = 'email supprimé'
                                            ,mdp_utilisateur = 'mdp supprimé'
+                                           , inactif = 1
                                         WHERE id_utilisateur = :id" ;
 
         // Prépare la requête

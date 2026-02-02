@@ -142,7 +142,7 @@ class UtilisateurController extends Controller {
                 $objUtilisateur->setNom($nom);
                 $objUtilisateur->setPrenom($prenom);
                 $objUtilisateur->setEmail($email);
-                $objUtilisateur->setMdp($_POST["password"]);
+                $objUtilisateur->setMdp(password_hash($_POST["password"], PASSWORD_DEFAULT));
                 $objUtilisateur->setRole($_POST["role"]);
 
                 $boolInsert = $utilisateurModel->addUser($objUtilisateur);
@@ -249,7 +249,7 @@ class UtilisateurController extends Controller {
                 $objUtilisateur->setPrenom($prenom);
                 $objUtilisateur->setEmail($email);
                 if (!empty($_POST["password"])) {
-                    $objUtilisateur->setMdp($_POST["password"]);
+                    $objUtilisateur->setMdp(password_hash($_POST["password"], PASSWORD_DEFAULT));
                 }
                 $objUtilisateur->setRole($_POST["role"]);
 
